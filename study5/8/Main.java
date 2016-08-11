@@ -53,8 +53,13 @@ class Car extends Vehicle {
     }
   }
 
-  public void charge(int liter) {
-    this.fuel += liter;
+  public void charge(int litre) {
+    if (litre < 0) {
+      System.out.println("給油できません");
+    } else {
+      this.fuel += litre;
+      System.out.println(litre + "L給油しました");
+    }
   }
 }
 

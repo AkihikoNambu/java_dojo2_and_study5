@@ -1,9 +1,10 @@
-class Bicycle {
+class Car {
   private String name;
   private String color;
+  private int fuel = 100;
   private int distance = 0;
   // CONSTRUCTORS
-  Bicycle(String name, String color) {
+  Car(String name, String color) {
     this.name = name;
     this.color = color;
   }
@@ -13,6 +14,9 @@ class Bicycle {
   }
   public String getColor() {
     return this.color;
+  }
+  public int getFuel() {
+    return this.fuel;
   }
   public int getDistance() {
     return this.distance;
@@ -26,13 +30,28 @@ class Bicycle {
   }
   // OTHER METHODS
   public void printData() {
+    System.out.println("【車の情報】");
     System.out.println("名前: " + this.name);
     System.out.println("色: " + this.color);
     System.out.println("走行距離: " + this.distance + " (km)");
+    System.out.println("ガソリン量: " + this.fuel + " (L)");
   }
 
   public void run(int distance) {
-    this.distance += distance;
-    System.out.println(distance + "km走りました");
+    if (distance > this.fuel) {
+      System.out.println("ガソリンが足りません");
+    } else {
+      this.distance += distance;
+      this.fuel -= distance;
+      System.out.println(distance + "km走りました");
+    }
+  }
+
+  public void charge(int liter) {
+    if (liter < 0) {
+      System.out.println("0L以下の燃料は給油出来ません");
+      return;
+    }
+    this.fuel += liter;
   }
 }

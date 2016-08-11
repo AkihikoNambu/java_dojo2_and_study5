@@ -4,7 +4,10 @@ class Main {
     Car car = new Car("車", "黒");
     Bicycle bicycle = new Bicycle("自転車", "赤");
 
-    System.out.println("【車の情報】");
+    car.printData();
+    car.charge(40);
+    car.printData();
+    car.charge(-40);
     car.printData();
 
     System.out.println("-----------------");
