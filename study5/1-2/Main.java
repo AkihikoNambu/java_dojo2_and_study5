@@ -1,13 +1,13 @@
-// 学習内容: コンストラクタを定義
+// 学習内容: 親のメソッドを呼び出す
 
 class Main {
   public static void main(String[] args) {
     Car car = new Car();
-    car.setName("車");
-    car.setColor("黒");
+    car.setName("フェラーリ");
+    car.setColor("赤");
     Bicycle bicycle = new Bicycle();
-    bicycle.setName("自転車");
-    bicycle.setColor("白");
+    bicycle.setName("ビアンキ");
+    bicycle.setColor("緑");
 
     System.out.println("【車の情報】");
     car.printData();
@@ -19,36 +19,15 @@ class Main {
 }
 
 class Car extends Vehicle {
-  private int fuel = 100;
-
-  Car() {
-    System.out.println("Carクラスのコンストラクタです");
-  }
-
-  public int getFuel() {
-    return this.fuel;
-  }
-
-  public void printData() {
-    super.printData();
-    System.out.println("ガソリン量: " + this.fuel + " (L)");
-  }
 }
 
 class Bicycle extends Vehicle {
-  Bicycle() {
-    System.out.println("Carクラスのコンストラクタです");
-  }
 }
 
 class Vehicle {
   private String name;
   private String color;
   private int distance = 0;
-
-  Vehicle() {
-    System.out.println("Vehicleクラスのコンストラクタです");
-  }
 
   public String getName() {
     return this.name;

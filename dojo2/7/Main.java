@@ -27,6 +27,22 @@ class Car {
     this.color = color;
   }
 
+  public String getName() {
+    return this.name;
+  }
+  public String getColor() {
+    return this.color;
+  }
+  public int getDistance() {
+    return this.distance;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+  public void setColor(String color) {
+    this.color = color;
+  }
+
   public void printData() {
     System.out.println("【車の情報】");
     System.out.println("名前: " + this.name);
@@ -53,6 +69,22 @@ class Bicycle {
 
   Bicycle(String name, String color) {
     this.name = name;
+    this.color = color;
+  }
+
+  public String getName() {
+    return this.name;
+  }
+  public String getColor() {
+    return this.color;
+  }
+  public int getDistance() {
+    return this.distance;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+  public void setColor(String color) {
     this.color = color;
   }
 

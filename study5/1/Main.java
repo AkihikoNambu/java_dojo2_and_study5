@@ -3,18 +3,7 @@
 class Main {
   public static void main(String[] args) {
     Car car = new Car();
-    car.setName("車");
-    car.setColor("黒");
     Bicycle bicycle = new Bicycle();
-    bicycle.setName("自動車");
-    bicycle.setColor("白");
-
-    System.out.println("【車の情報】");
-    car.printData();
-
-    System.out.println("-----------------");
-    System.out.println("【自転車の情報】");
-    bicycle.printData();
   }
 }
 

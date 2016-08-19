@@ -2,14 +2,15 @@
 
 class Main {
   public static void main(String[] args) {
-    Car car = new Car("車", "黒");
-    Bicycle bicycle = new Bicycle("自転車", "白");
+    Car car = new Car("フェラーリ", "赤");
+    Bicycle bicycle = new Bicycle("ビアンキ", "緑");
 
     System.out.println("【車の情報】");
     car.printData();
+    car.charge(50);
+    car.printData();
 
     System.out.println("-----------------");
-
     System.out.println("【自転車の情報】");
     bicycle.printData();
   }
@@ -29,6 +30,18 @@ class Car extends Vehicle {
   public void printData() {
     super.printData();
     System.out.println("ガソリン量: " + this.fuel + " (L)");
+  }
+
+  public void charge(int litre) {
+    System.out.println(litre + "L給油します");
+    if (litre <= 0) {
+      System.out.println("給油できません");
+    } else if (litre + this.fuel >= 100) {
+      System.out.println("満タンまで給油します");
+      this.fuel = 100;
+    } else {
+      this.fuel += litre;
+    }
   }
 }
 

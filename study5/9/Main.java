@@ -4,9 +4,10 @@ class Main {
   public static void main(String[] args) {
     Person person1 = new Person("Kate", "Jones", 27, 1.6, 50.0);
     Person person2 = new Person("John", "Christopher", "Smith", 65, 1.75, 80.0);
-    Car car = new Car("車", "黒");
+
+    Car car = new Car("フェラーリ", "赤");
     car.setOwner(person1);
-    Bicycle bicycle = new Bicycle("自転車", "白");
+    Bicycle bicycle = new Bicycle("ビアンキ", "緑");
     bicycle.setOwner(person2);
 
     System.out.println("【車の情報】");
@@ -15,7 +16,6 @@ class Main {
     car.getOwner().printData();
 
     System.out.println("-----------------");
-
     System.out.println("【自転車の情報】");
     bicycle.printData();
     System.out.println("【自転車の所有者の情報】");
@@ -40,21 +40,24 @@ class Car extends Vehicle {
   }
 
   public void run(int distance) {
-    if (distance > fuel) {
-      System.out.println("ガソリンが足りません");
-    } else {
+    System.out.println(distance + "km走ります");
+    if (distance < this.fuel) {
       this.distance += distance;
       this.fuel -= distance;
-      System.out.println(distance + "km走りました");
+    } else {
+      System.out.println("ガソリンが足りません");
     }
   }
 
   public void charge(int litre) {
-    if (litre < 0) {
+    System.out.println(litre + "L給油します");
+    if (litre <= 0) {
       System.out.println("給油できません");
+    } else if (litre + this.fuel >= 100) {
+      System.out.println("満タンまで給油します");
+      this.fuel = 100;
     } else {
       this.fuel += litre;
-      System.out.println(litre + "L給油しました");
     }
   }
 }
@@ -65,8 +68,8 @@ class Bicycle extends Vehicle {
   }
 
   public void run(int distance) {
+    System.out.println(distance + "km走ります");
     this.distance += distance;
-    System.out.println(distance + "km走りました");
   }
 }
 
