@@ -5,5 +5,5 @@ class Main {
   }
 }
 
-class Car {
+class Bicycle {
 }

@@ -2,16 +2,16 @@
 
 class Main {
   public static void main(String[] args) {
-    Car car = new Car("ブリウス");
-    System.out.println("【車の情報】");
-    System.out.println("名前: " + car.getName());
+    Bicycle bicycle = new Bicycle("フェラーリ");
+    System.out.println("【自転車の情報】");
+    System.out.println("名前: " + bicycle.getName());
   }
 }
 
-class Car {
+class Bicycle {
   private String name;
 
-  Car(String name) {
+  Bicycle(String name) {
     this.name = name;
   }
 

@@ -2,15 +2,17 @@
 
 class Main {
   public static void main(String[] args) {
-    Car car = new Car("ブリウス", "黒");
-    car.printData();
-    car.run(50);
-    car.printData();
-
-    Bicycle bicycle = new Bicycle("自転車", "赤");
+    Bicycle bicycle = new Bicycle("ビアンキ", "緑");
     bicycle.printData();
     bicycle.run(10);
     bicycle.printData();
+
+    Car car = new Car("フェラーリ", "赤");
+    car.printData();
+    car.run(50);
+    car.printData();
+    car.run(100);
+    car.printData();
   }
 }
 
@@ -29,17 +31,17 @@ class Car {
     System.out.println("【車の情報】");
     System.out.println("名前: " + this.name);
     System.out.println("色: " + this.color);
-    System.out.println("合計走行距離: " + this.distance + "(km)");
-    System.out.println("残りのガソリン量: " + this.fuel + "(L)");
+    System.out.println("走行距離: " + this.distance + "(km)");
+    System.out.println("ガソリン量: " + this.fuel + "(L)");
   }
 
   public void run(int distance) {
-    if (this.fuel < distance) {
-      System.out.println("ガソリンが足りません");
-    } else {
+    System.out.println(distance + "km走ります");
+    if (distance < this.fuel) {
       this.distance += distance;
-      System.out.println(distance + "km走りました");
       this.fuel -= distance;
+    } else {
+      System.out.println("ガソリンが足りません");
     }
   }
 }
@@ -62,7 +64,7 @@ class Bicycle {
   }
 
   public void run(int distance) {
+    System.out.println(distance + "km走ります");
     this.distance += distance;
-    System.out.println(distance + "km走りました");
   }
 }

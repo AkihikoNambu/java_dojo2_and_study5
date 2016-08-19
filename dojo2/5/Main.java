@@ -2,15 +2,15 @@
 
 class Main {
   public static void main(String[] args) {
-    Car car = new Car("ブリウス", "黒");
-    car.printData();
-    car.run(50);
-    car.printData();
-
-    Bicycle bicycle = new Bicycle("自転車", "赤");
+    Bicycle bicycle = new Bicycle("ビアンキ", "緑");
     bicycle.printData();
     bicycle.run(10);
     bicycle.printData();
+
+    Car car = new Car("フェラーリ", "赤");
+    car.printData();
+    car.run(50);
+    car.printData();
   }
 }
 
@@ -32,8 +32,8 @@ class Car {
   }
 
   public void run(int distance) {
+    System.out.println(distance + "km走ります");
     this.distance += distance;
-    System.out.println(distance + "km走りました");
   }
 }
 
@@ -55,7 +55,7 @@ class Bicycle {
   }
 
   public void run(int distance) {
+    System.out.println(distance + "km走ります");
     this.distance += distance;
-    System.out.println(distance + "km走りました");
   }
 }

@@ -44,12 +44,12 @@ class Car extends Vehicle {
   }
 
   public void run(int distance) {
+    System.out.println(distance + "km走ります")
     if (distance > fuel) {
       System.out.println("ガソリンが足りません");
     } else {
       this.distance += distance;
       this.fuel -= distance;
-      System.out.println(distance + "km走りました");
     }
   }
 
@@ -69,8 +69,8 @@ class Bicycle extends Vehicle {
   }
 
   public void run(int distance) {
+    System.out.println(distance + "km走ります");
     this.distance += distance;
-    System.out.println(distance + "km走りました");
   }
 }
 
